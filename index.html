@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSGAI - Fahr's Syndrome Global Awareness Initiative</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">FSGAI</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#donate">Donate</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#impact">Impact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 text-center">
+        <div class="container">
+            <h2>About FSGAI</h2>
+            <p class="lead">Fahr's Syndrome is a rare neurological disorder characterized by abnormal deposits of calcium in areas of the brain that control movement. We are dedicated to raising awareness, supporting research, and helping those affected.</p>
+        </div>
+    </section>
+
+    <!-- Donate Section -->
+    <section id="donate" class="bg-light py-5">
+        <div class="container text-center">
+            <h2>Donate to Support Our Cause</h2>
+            <p>Your generous donations fund critical research and support for families affected by Fahr's Syndrome.</p>
+            <form action="https://www.your-donation-handler.com" method="post" class="d-inline-block">
+                <div class="mb-3">
+                    <label for="amount" class="form-label">Donation Amount</label>
+                    <input type="number" id="amount" name="amount" class="form-control" placeholder="Enter amount" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Donate Now</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Impact Section with Carousel -->
+    <section id="impact" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Our Impact</h2>
+            <div id="impactCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="fahrs1.jpg" class="d-block mx-auto" style="width: 60%; height: auto;" alt="Fahr's Syndrome Research Impact">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Funding Groundbreaking Research</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="fahrs2.jpg" class="d-block w-100" alt="Supporting Patients and Families">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Supporting Patients and Families Worldwide</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="slide3.jpg" class="d-block w-100" alt="Raising Global Awareness">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Raising Awareness for a Rare Disease</h5>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#impactCarousel" data-bs-slide="prev" style="position: absolute; top: 50%; left: 15px; transform: translateY(-50%);">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#impactCarousel" data-bs-slide="next" style="position: absolute; top: 50%; right: 15px; transform: translateY(-50%);">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>FSGAI © 2024 | <a href="contact.html" class="text-white">Contact Us</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

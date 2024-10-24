@@ -1,0 +1,21 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+h2 {
+    color: #333;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+#donate .form-control {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.carousel-caption h5 {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
