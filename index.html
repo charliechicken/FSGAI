@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FSGAI - Fahr's Syndrome Global Awareness Initiative</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
     <link rel="icon" href="Images/logo2.png" type="image/icon type">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
 
     <!-- Custom CSS for Button and Modal Styling -->
     <style>
@@ -42,103 +45,254 @@
         .btn-dark-blue:focus {
             box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
         }
+
+        .impact-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .impact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .counter {
+            color: #003366;
+            font-weight: bold;
+        }
+
+        /* Animate on scroll classes */
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-in;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('network.png');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            color: white;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            padding: 0 20px;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content .lead {
+            font-size: 1.4rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            margin-bottom: 2rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Parallax Sections */
+        .parallax-section {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 400px;
+            position: relative;
+        }
+
+        /* Enhanced Navbar */
+        .navbar {
+            background: transparent !important;
+            transition: background 0.3s ease;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar.scrolled {
+            background: rgba(0, 0, 0, 0.9) !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 1rem !important;
+            margin: 0 0.2rem;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
     </style>
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="Images/fahrstext.png" height="20" alt="MDB Logo" loading="lazy"/>
             </a>
-            <span class="navbar-text mx-auto lead" style="color: white; font-weight: bold;">
-                Fahr's Syndrome Global Awareness Initiative
-            </span>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about" style="color:white">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#donate" style="color:white">Donate</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#impact" style="color:white">Impact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#donate">Donate</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#impact">Impact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="display-2 mb-4">Fahr's Syndrome Global Awareness Initiative</h1>
+            <p class="lead mb-4">Advancing research, supporting families, and raising awareness for Fahr's Syndrome</p>
+            <a href="#donate" class="btn btn-dark-blue btn-lg">Support Our Mission</a>
+        </div>
+    </section>
+
     <!-- About Section -->
-<!-- About Section -->
-<!-- About Section -->
-<section id="about" class="py-5 text-center">
-    <div class="container">
-        <div class="row align-items-center">
-            <!-- Text on the left (50% width) -->
-            <div class="col-md-6">
-                <h2>About FSGAI</h2>
-                <p class="lead">Fahr's Syndrome is a rare neurological disorder characterized by abnormal deposits of calcium in areas of the brain that control movement.</p>
-                <p class="lead">Beyond movement issues, Fahr’s Syndrome can also affect cognition and mental health. Many individuals with the condition experience cognitive decline, including memory impairment, difficulty concentrating, and in severe cases, dementia. Psychiatric symptoms such as depression, mood swings, anxiety, and psychosis are also common. These cognitive and psychiatric disturbances can have a profound impact on an individual’s ability to function independently and maintain relationships.</p>
-                <p class="lead" style="font-weight: bold;"><strong>There is currently no cure.</strong></p>
-                <p class="lead">FSGAI's goal is to raise awareness, support research, and help those affected.</p>
-            </div>
-            <!-- Image on the right (50% width) -->
-            <div class="col-md-6">
-                <img src="aboutfahrs.jpg" style="width: 50%; height: auto;" alt="Fahr's Syndrome Image" class="img-fluid rounded">
-                <!-- Citation below the image -->
-                <p class="mt-2 text-muted" style="font-size: 0.9em;">Image source: <a href="https://radiologycases.my/2024/05/24/fahr-syndrome/" target="_blank" class="text-decoration-none">RadiologyCases.my</a> (2024).</p>
+    <section id="about" class="parallax-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Text on the left (50% width) -->
+                <div class="col-md-6">
+                    <br><br><br>
+                    <h2>About FSGAI</h2>
+                    <p class="lead">Fahr's Syndrome is a rare neurological disorder characterized by abnormal deposits of calcium in areas of the brain that control movement.</p>
+                    <p class="lead">Beyond movement issues, Fahr’s Syndrome can also affect cognition and mental health. Many individuals with the condition experience cognitive decline, including memory impairment, difficulty concentrating, and in severe cases, dementia. Psychiatric symptoms such as depression, mood swings, anxiety, and psychosis are also common. These cognitive and psychiatric disturbances can have a profound impact on an individual’s ability to function independently and maintain relationships.</p>
+                    <p class="lead" style="font-weight: bold;"><strong>There is currently no cure.</strong></p>
+                    <p class="lead">FSGAI's goal is to raise awareness, support research, and help those affected.</p>
+                </div>
+                <!-- Image on the right (50% width) -->
+                <div class="col-md-6">
+                    <img src="aboutfahrs.jpg" style="width: 50%; height: auto;" alt="Fahr's Syndrome Image" class="img-fluid rounded">
+                    <!-- Citation below the image -->
+                    <p class="mt-2 text-muted" style="font-size: 0.9em;">Image source: <a href="https://radiologycases.my/2024/05/24/fahr-syndrome/" target="_blank" class="text-decoration-none">RadiologyCases.my</a> (2024).</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
+    <section id="donate" class="parallax-section bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Left Column: Image -->
+                <div class="col-md-6">
+                    <img src="heart.png" alt="Donate for a Cause" class="img-fluid rounded" style="max-width: 100%; height: auto;">
+                </div>
 
+                <!-- Right Column: Donation Form -->
+                <div class="col-md-6 text-center">
+                    <h2>Donate to Support Our Cause</h2>
+                    <p class="lead">Your generous donations fund critical research and support for families affected by Fahr's Syndrome.</p>
+                    
+                    <!-- PayPal Form -->
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <input type="hidden" name="cmd" value="_donations">
+                        <input type="hidden" name="business" value="YOUR_PAYPAL_BUSINESS_EMAIL">
+                        <input type="hidden" name="currency_code" value="USD">
+                        <input type="hidden" name="return" value="https://www.your-website.com/thank-you.html">
+                        <input type="hidden" name="cancel_return" value="https://www.your-website.com/cancelled.html">
 
-<section id="donate" class="bg-light py-5">
-    <div class="container">
-        <div class="row align-items-center">
-            <!-- Left Column: Image -->
-            <div class="col-md-6">
-                <img src="heart.png" alt="Donate for a Cause" class="img-fluid rounded" style="max-width: 100%; height: auto;">
+                        <div class="mb-3">
+                            <label for="amount" class="form-label lead">Donation Amount</label>
+                            <input type="number" id="amount" name="amount" class="form-control" placeholder="Enter amount" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-dark-blue">Donate Now</button>
+                    </form>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Right Column: Donation Form -->
-            <div class="col-md-6 text-center">
-                <h2>Donate to Support Our Cause</h2>
-                <p class="lead">Your generous donations fund critical research and support for families affected by Fahr's Syndrome.</p>
-                
-                <!-- PayPal Form -->
-                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                    <input type="hidden" name="cmd" value="_donations">
-                    <input type="hidden" name="business" value="YOUR_PAYPAL_BUSINESS_EMAIL">
-                    <input type="hidden" name="currency_code" value="USD">
-                    <input type="hidden" name="return" value="https://www.your-website.com/thank-you.html">
-                    <input type="hidden" name="cancel_return" value="https://www.your-website.com/cancelled.html">
-
-                    <div class="mb-3">
-                        <label for="amount" class="form-label lead">Donation Amount</label>
-                        <input type="number" id="amount" name="amount" class="form-control" placeholder="Enter amount" required>
+    <section id="impact" class="parallax-section">
+        <div class="container">
+            <br><br><br>
+            <h2 class="text-center mb-5">Our Impact</h2>
+            
+            <div class="row">
+                <!-- Impact Cards -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 impact-card text-center">
+                        <div class="card-body">
+                            <div class="display-4 mb-3 counter" data-target="1638">0</div>
+                            <h3 class="card-title">Dollars Raised</h3>
+                            <p class="card-text">Direct funding for research and family support</p>
+                        </div>
                     </div>
-
-                    <button type="submit" class="btn btn-dark-blue">Donate Now</button>
-                </form>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 impact-card text-center">
+                        <div class="card-body">
+                            <div class="display-4 mb-3 counter" data-target="47">0</div>
+                            <h3 class="card-title">Families Supported</h3>
+                            <p class="card-text">Through education and resources</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 impact-card text-center">
+                        <div class="card-body">
+                            <div class="display-4 mb-3 counter" data-target="12">0</div>
+                            <h3 class="card-title">Research Projects</h3>
+                            <p class="card-text">Funded through donations</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-
-
-<section id="impact" class="py-5">
-    <div class="container">
-        <h2 class="text-center mb-4">Our Impact</h2>
-        
-        <!-- Donation Blurb -->
-        <div class="row">
-            <div class="col-12 text-center mb-4">
-                <p class="lead">Thanks to your generosity, we have raised a total of <strong style="font-weight: bold;">$1,638</strong> so far! All of these funds have been donated to the <strong>National Organization for Rare Disorders (NORD)</strong>, an organization dedicated to supporting families affected by Fahr's Syndrome and funding critical research. Your contributions are making a real difference in the lives of those living with this rare condition.</p>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- Popup Modal -->
     <div class="modal fade" id="donationModal" tabindex="-1" aria-labelledby="donationModalLabel" aria-hidden="true">
@@ -180,6 +334,54 @@
             });
             myModal.show();
         };
+    </script>
+
+    <!-- Counter animation -->
+    <script>
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000; // 2 seconds
+            const step = target / (duration / 16); // 60fps
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    element.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, 16);
+        }
+
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains('counter')) {
+                        animateCounter(entry.target);
+                    }
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        // On page load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize counters
+            document.querySelectorAll('.counter').forEach(counter => {
+                observer.observe(counter);
+            });
+
+            // Initialize fade-in elements
+            document.querySelectorAll('.impact-card').forEach(card => {
+                card.classList.add('fade-in');
+                observer.observe(card);
+            });
+        });
     </script>
 </body>
 </html>
