@@ -217,7 +217,7 @@
                 <div class="col-md-6">
                     <br><br><br>
                     <h2>About FSGAI</h2>
-                    <p class="lead">Fahr's Syndrome is a rare neurological disorder characterized by abnormal deposits of calcium in areas of the brain that control movement.</p>
+                    <p class="lead">Fahr's Syndrome, also known as Primary Familial Brain Calcification (PFBC), is a rare neurological disorder characterized by abnormal deposits of calcium in areas of the brain that control movement.</p>
                     <p class="lead">Beyond movement issues, Fahr’s Syndrome can also affect cognition and mental health. Many individuals with the condition experience cognitive decline, including memory impairment, difficulty concentrating, and in severe cases, dementia. Psychiatric symptoms such as depression, mood swings, anxiety, and psychosis are also common. These cognitive and psychiatric disturbances can have a profound impact on an individual’s ability to function independently and maintain relationships.</p>
                     <p class="lead" style="font-weight: bold;"><strong>There is currently no cure.</strong></p>
                     <p class="lead">FSGAI's goal is to raise awareness, support research, and help those affected.</p>
@@ -245,21 +245,40 @@
                     <h2>Donate to Support Our Cause</h2>
                     <p class="lead">Your generous donations fund critical research and support for families affected by Fahr's Syndrome.</p>
                     
-                    <!-- PayPal Form -->
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                        <input type="hidden" name="cmd" value="_donations">
-                        <input type="hidden" name="business" value="YOUR_PAYPAL_BUSINESS_EMAIL">
-                        <input type="hidden" name="currency_code" value="USD">
-                        <input type="hidden" name="return" value="https://www.your-website.com/thank-you.html">
-                        <input type="hidden" name="cancel_return" value="https://www.your-website.com/cancelled.html">
-
-                        <div class="mb-3">
-                            <label for="amount" class="form-label lead">Donation Amount</label>
-                            <input type="number" id="amount" name="amount" class="form-control" placeholder="Enter amount" required>
+                    <div class="row justify-content-center gap-3 mt-4">
+                        <!-- PayPal Option -->
+                        <div class="col-md-5">
+                            <div class="card h-100 p-3">
+                                <h4>Donate via PayPal</h4>
+                                <p>Secure donation through PayPal</p>
+                                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                    <input type="hidden" name="cmd" value="_donations">
+                                    <input type="hidden" name="business" value="YOUR_PAYPAL_BUSINESS_EMAIL">
+                                    <input type="hidden" name="currency_code" value="USD">
+                                    <div class="mb-3">
+                                        <label for="amount" class="form-label">Amount (USD)</label>
+                                        <input type="number" id="amount" name="amount" class="form-control" placeholder="Enter amount" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-dark-blue">Donate with PayPal</button>
+                                </form>
+                            </div>
                         </div>
 
-                        <button type="submit" class="btn btn-dark-blue">Donate Now</button>
-                    </form>
+                        <!-- GoFundMe Option -->
+                        <div class="col-md-5">
+                            <div class="card h-100 p-3">
+                                <h4>Donate via GoFundMe</h4>
+                                <p>Support our campaign on GoFundMe (recently added feature)</p>
+                                <div class="mt-auto">
+                                    <a href="https://www.gofundme.com/f/raise-awareness-for-rare-fahrs-syndrome" 
+                                       target="_blank" 
+                                       class="btn btn-dark-blue">
+                                        Donate on GoFundMe
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -275,7 +294,7 @@
                 <div class="col-md-4 mb-4">
                     <div class="card h-100 impact-card text-center">
                         <div class="card-body">
-                            <div class="display-4 mb-3 counter" data-target="1638">0</div>
+                            <div class="display-4 mb-3 counter" data-target="1791">0</div>
                             <h3 class="card-title">Dollars Raised</h3>
                             <p class="card-text">Direct funding for research and family support</p>
                         </div>
@@ -296,8 +315,8 @@
                     <div class="card h-100 impact-card text-center">
                         <div class="card-body">
                             <div class="display-4 mb-3 counter" data-target="45">0</div>
-                            <h3 class="card-title">Countries Supported</h3>
-                            <p class="card-text">Globally and in the US through our donations</p>
+                            <h3 class="card-title">Countries Reached</h3>
+                            <p class="card-text">Through education, awareness, and support resources</p>
                         </div>
                     </div>
                 </div>
@@ -315,16 +334,31 @@
                 </div>
                 <div class="modal-body">
                     <p>Would you like to donate to help support research and provide resources for those affected by Fahr's Syndrome? Every contribution makes a difference.</p>
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                        <input type="hidden" name="cmd" value="_donations">
-                        <input type="hidden" name="business" value="YOUR_PAYPAL_BUSINESS_EMAIL">
-                        <input type="hidden" name="currency_code" value="USD">
-                        <div class="mb-3">
-                            <label for="donationAmount" class="form-label">Donation Amount</label>
-                            <input type="number" name="amount" class="form-control" id="donationAmount" placeholder="Enter amount" required>
+                    <div class="row justify-content-center gap-3 mt-3">
+                        <!-- PayPal Option -->
+                        <div class="col-md-5">
+                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                <input type="hidden" name="cmd" value="_donations">
+                                <input type="hidden" name="business" value="YOUR_PAYPAL_BUSINESS_EMAIL">
+                                <input type="hidden" name="currency_code" value="USD">
+                                <div class="mb-3">
+                                    <label for="donationAmount" class="form-label">PayPal Donation Amount</label>
+                                    <input type="number" name="amount" class="form-control" id="donationAmount" placeholder="Enter amount" required>
+                                </div>
+                                <button type="submit" class="btn btn-dark-blue w-100">Donate with PayPal</button>
+                            </form>
                         </div>
-                        <button type="submit" class="btn btn-dark-blue">Donate Now</button>
-                    </form>
+                        
+                        <!-- GoFundMe Option -->
+                        <div class="col-md-5">
+                            <label class="form-label">GoFundMe Campaign (recently added feature)</label>
+                            <a href="https://www.gofundme.com/f/raise-awareness-for-rare-fahrs-syndrome" 
+                               target="_blank" 
+                               class="btn btn-dark-blue w-100">
+                                Donate on GoFundMe
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
